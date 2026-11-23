@@ -1,28 +1,269 @@
-```html
+
 <!DOCTYPE html>
 <html lang="mn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Миний товч CV</title>
+    <meta name="description" content="Гэрэл зураг болон дурсамжийн зургийн цомог">
+    <title>Photo Gallery | Зургийн цомог</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Сансардөл</h1>
 
-    <p>Мэдээллийн технологийн сургуулийн 2-р курсийн суралцагч.</p>
-    <p>Вэб хөгжүүлэлт болон шинэ технологиудыг сонирхон судалдаг.</p>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">PHOTO<span>GALLERY.</span></a>
 
-    <h2>Эзэмшсэн чадварууд</h2>
-    <ul>
-        <li>HTML5 & CSS3 үндэс</li>
-        <li>Git & GitHub хувилбар удирдлага</li>
-        <li>Программчлалын C++ хэл</li>
-    </ul>
+            <nav aria-label="Үндсэн цэс">
+                <ul class="nav-links">
+                    <li><a href="#home">Нүүр</a></li>
+                    <li><a href="#gallery">Зургийн цомог</a></li>
+                    <li><a href="#video">Видео</a></li>
+                    <li><a href="#about">Бидний тухай</a></li>
+                </ul>
+            </nav>
 
-    <h2>Холбоо барих</h2>
-    <p>Миний GitHub профайлтай танилцах:
-        <a href="https://github.com/sansarduld-ctrl">GitHub профайл</a>
-    </p>
+            <button id="themeToggle" class="theme-btn"
+                type="button" aria-label="Өнгөний горим солих">
+                🌙 Dark mode
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="hero-small">WELCOME TO MY WORLD</p>
+                <h1>Дурсамж бүхэн <span>нандин</span></h1>
+                <p>
+                    Гэрэл зураг бол цаг хугацааг хадгалдаг
+                    хамгийн сайхан дурсамж юм.
+                </p>
+                <a href="#gallery" class="main-btn">Зураг үзэх ↓</a>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section class="gallery-section container" id="gallery">
+
+            <div class="section-title">
+                <p class="subtitle">MY COLLECTION</p>
+                <h2>Миний зургийн цомог</h2>
+                <p>Гайхалтай мөчүүдийг хамтдаа сонирхоцгооё.</p>
+            </div>
+
+            <div class="gallery-grid">
+
+                <article class="flip-card" style="--i: 0">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="img/photo1.jpg"
+                                alt="Байгалийн үзэсгэлэнт газар">
+                            <div class="photo-info">
+                                <h3>Nature</h3>
+                                <p>Байгалийн үзэсгэлэн</p>
+                            </div>
+                        </div>
+                        <div class="flip-back">
+                            <h3>Nature 🌿</h3>
+                            <p>Байгаль дэлхийн гайхамшигт өнгө төрх.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="flip-card" style="--i: 1">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="img/photo2.jpg"
+                                alt="Хотын үзэмж">
+                            <div class="photo-info">
+                                <h3>City</h3>
+                                <p>Хотын амьдрал</p>
+                            </div>
+                        </div>
+                        <div class="flip-back">
+                            <h3>City 🏙️</h3>
+                            <p>Хотын амьдралын өнгө төрх.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="flip-card" style="--i: 2">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="img/photo3.jpg"
+                                alt="Аяллын дурсамж">
+                            <div class="photo-info">
+                                <h3>Travel</h3>
+                                <p>Аяллын дурсамж</p>
+                            </div>
+                        </div>
+                        <div class="flip-back">
+                            <h3>Travel ✈️</h3>
+                            <p>Шинэ газар, шинэ дурсамж.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="flip-card" style="--i: 3">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="img/photo4.jpg"
+                                alt="Далайн үзэмж">
+                            <div class="photo-info">
+                                <h3>Ocean</h3>
+                                <p>Далайн ертөнц</p>
+                            </div>
+                        </div>
+                        <div class="flip-back">
+                            <h3>Ocean 🌊</h3>
+                            <p>Далайн үзэсгэлэнт ертөнц.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="flip-card" style="--i: 4">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="img/photo5.jpg"
+                                alt="Цэцэгсийн зураг">
+                            <div class="photo-info">
+                                <h3>Flowers</h3>
+                                <p>Цэцэгсийн гоо үзэсгэлэн</p>
+                            </div>
+                        </div>
+                        <div class="flip-back">
+                            <h3>Flowers 🌸</h3>
+                            <p>Байгалийн үзэсгэлэнт цэцэгс.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="flip-card" style="--i: 5">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="img/photo6.jpg"
+                                alt="Нар жаргах үеийн зураг">
+                            <div class="photo-info">
+                                <h3>Sunset</h3>
+                                <p>Нар жаргах мөч</p>
+                            </div>
+                        </div>
+                        <div class="flip-back">
+                            <h3>Sunset 🌅</h3>
+                            <p>Өдрийн хамгийн тайван мөч.</p>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <button id="flipToggle" class="main-btn flip-btn"
+                type="button" aria-pressed="false">
+                🔄 Зургийг эргүүлэх
+            </button>
+
+        </section>
+
+        <!-- VIDEO SECTION -->
+        <section class="video-section" id="video">
+            <div class="container">
+                <div class="section-title">
+                    <p class="subtitle">MULTIMEDIA</p>
+                    <h2>Видео булан</h2>
+                    <p>Дүрс бичлэгээр дамжуулан дурсамжаа хуваалцъя.</p>
+                </div>
+
+                <div class="video-box">
+                    <video controls preload="metadata"
+                        poster="img/photo1.jpg">
+                        <source src="video/clip.mp4" type="video/mp4">
+                        <source src="video/clip.webm" type="video/webm">
+
+                        <track
+                            src="video/clip.mn.vtt"
+                            kind="subtitles"
+                            srclang="mn"
+                            label="Монгол хэл"
+                            default>
+
+                        Таны хөтөч видео тоглуулах боломжгүй байна.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- YOUTUBE SECTION -->
+        <section class="youtube-section container">
+            <div class="section-title">
+                <p class="subtitle">WATCH MORE</p>
+                <h2>Сонирхолтой бичлэг</h2>
+            </div>
+
+            <div class="iframe-box">
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/ScMzIvxBSi4"
+                    title="Байгалийн тухай видео"
+                    loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    sandbox="allow-scripts allow-same-origin allow-presentation"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="about-section" id="about">
+            <div class="container about-content">
+                <div>
+                    <p class="subtitle">ABOUT US</p>
+                    <h2>Дурсамжийг хамтдаа бүтээе</h2>
+                    <p>
+                        Энэхүү зургийн цомог нь байгаль,
+                        аялал, хотын амьдрал болон өдөр
+                        тутмын сайхан мөчүүдийг нэг дор
+                        цуглуулсан фото галерей юм.
+                    </p>
+                </div>
+
+                <div class="about-icon">
+                    <!-- Inline SVG -->
+                    <svg viewBox="0 0 100 100"
+                        role="img"
+                        aria-labelledby="cameraTitle"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title id="cameraTitle">Фото камерын дүрс</title>
+                        <rect x="10" y="28" width="80" height="55"
+                            rx="10" fill="none"
+                            stroke="currentColor" stroke-width="5"/>
+                        <circle cx="50" cy="55" r="17"
+                            fill="none"
+                            stroke="currentColor" stroke-width="5"/>
+                        <path d="M30 28 L38 17 H62 L70 28"
+                            fill="none"
+                            stroke="currentColor" stroke-width="5"/>
+                        <circle cx="77" cy="40" r="3"
+                            fill="currentColor"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Photo Gallery. Бүх эрх хуулиар хамгаалагдсан.</p>
+            <p>Made with ❤️ | My Gallery</p>
+        </div>
+    </footer>
+
 </body>
 </html>
-```
