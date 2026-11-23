@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаборатори 02 - Оюутны анкет</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px 15px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #dbeafe, #eff6ff);
+            color: #1e293b;
+        }
+
+        header {
+            max-width: 900px;
+            margin: 0 auto 25px;
+            padding: 25px;
+            text-align: center;
+            background: #2563eb;
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px #00000018;
+        }
+
+        header h1 {
+            margin-top: 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 8px;
+        }
+
+        nav a:hover {
+            background: #1d4ed8;
+        }
+
+        main {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        article {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px #1e40af18;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #1d4ed8;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        #anket > p {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        fieldset {
+            border: 2px solid #bfdbfe;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            background: #f8fbff;
+        }
+
+        legend {
+            padding: 8px 14px;
+            color: #1d4ed8;
+            font-weight: bold;
+            background: #dbeafe;
+            border-radius: 7px;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            display: block;
+            width: 100%;
+            margin-top: 8px;
+            margin-bottom: 20px;
+            padding: 12px;
+            font-size: 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            background: white;
+            outline: none;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px #3b82f625;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            max-width: 100%;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            accent-color: #2563eb;
+            margin: 10px 5px 10px 0;
+        }
+
+        fieldset p {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            padding: 12px 24px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button[type="submit"] {
+            background: #2563eb;
+            color: white;
+        }
+
+        button[type="submit"]:hover {
+            background: #1d4ed8;
+        }
+
+        button[type="reset"] {
+            background: #e2e8f0;
+            color: #334155;
+        }
+
+        button[type="reset"]:hover {
+            background: #cbd5e1;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        form fieldset {
+            text-align: left;
+        }
+
+        section ul {
+            padding-left: 25px;
+            line-height: 2;
+        }
+
+        section ul li::marker {
+            color: #2563eb;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        th, td {
+            border: 1px solid #bfdbfe;
+            padding: 12px;
+        }
+
+        th {
+            background: #2563eb;
+            color: white;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #eff6ff;
+        }
+
+        tbody tr:hover {
+            background: #dbeafe;
+        }
+
+        #tuslamj {
+            padding: 20px;
+            text-align: center;
+            background: #eff6ff;
+            border-radius: 10px;
+        }
+
+        #tuslamj p {
+            line-height: 1.7;
+        }
+
+        footer {
+            max-width: 900px;
+            margin: 25px auto 0;
+            padding: 20px;
+            text-align: center;
+            color: #475569;
+            background: #dbeafe;
+            border-radius: 12px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px 10px;
+            }
+
+            header {
+                padding: 20px 12px;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            article {
+                padding: 18px 12px;
+            }
+
+            fieldset {
+                padding: 18px 12px;
+            }
+
+            nav ul {
+                gap: 8px;
+            }
+
+            nav a {
+                padding: 8px;
+            }
+
+            th, td {
+                padding: 8px 5px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Оюутны Бүртгэлийн Портал</h1>
+
+        <nav>
+            <ul>
+                <li><a href="../index.html">Нүүр</a></li>
+                <li><a href="#anket">Анкет бөглөх</a></li>
+                <li><a href="#sonirhol">Миний сонирхол</a></li>
+                <li><a href="#tuslamj">Тусламж</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+
+            <!-- ХЭРЭГЛЭГЧИЙН АНКЕТ -->
+            <section id="anket">
+                <h2>Хэрэглэгчийн анкет бөглөх</h2>
+
+                <p>
+                    Доорх формын дагуу мэдээллээ бүрэн,
+                    үнэн зөв бөглөнө үү.
+                </p>
+
+                <form action="#" method="post"
+                      enctype="multipart/form-data">
+
+                    <fieldset>
+                        <legend>Хувийн мэдээлэл</legend>
+
+                        <label for="fullname">Овог, нэр:</label>
+                        <input type="text"
+                               id="fullname"
+                               name="fullname"
+                               placeholder="Овог нэрээ бичнэ үү"
+                               minlength="2"
+                               pattern=".*\S.*"
+                               required>
+
+                        <label for="email">Цахим хаяг:</label>
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               placeholder="example@gmail.com"
+                               required>
+
+                        <label for="password">Нууц үг:</label>
+                        <input type="password"
+                               id="password"
+                               name="password"
+                               minlength="6"
+                               required>
+
+                        <label for="phone">Утасны дугаар:</label>
+                        <input type="tel"
+                               id="phone"
+                               name="phone"
+                               pattern="[0-9]{8}"
+                               maxlength="8"
+                               inputmode="numeric"
+                               placeholder="88112233"
+                               title="8 оронтой утасны дугаар оруулна уу"
+                               required>
+
+                        <label for="birthdate">Төрсөн огноо:</label>
+                        <input type="date"
+                               id="birthdate"
+                               name="birthdate"
+                               required>
+
+                        <label for="photo">Зураг оруулах:</label>
+                        <input type="file"
+                               id="photo"
+                               name="photo"
+                               accept="image/*">
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Нэмэлт мэдээлэл</legend>
+
+                        <p>Хүйс:</p>
+
+                        <input type="radio"
+                               id="male"
+                               name="gender"
+                               value="male"
+                               required>
+                        <label for="male">Эрэгтэй</label>
+
+                        <input type="radio"
+                               id="female"
+                               name="gender"
+                               value="female">
+                        <label for="female">Эмэгтэй</label>
+
+                        <input type="radio"
+                               id="other"
+                               name="gender"
+                               value="other">
+                        <label for="other">Бусад</label>
+
+                        <br><br>
+
+                        <label for="course">
+                            Суралцаж буй курс:
+                        </label>
+
+                        <select id="course"
+                                name="course"
+                                required>
+                            <option value="">Сонгоно уу</option>
+                            <option value="1">1-р курс</option>
+                            <option value="2">2-р курс</option>
+                            <option value="3">3-р курс</option>
+                            <option value="4">4-р курс</option>
+                        </select>
+
+                        <p>Сонирхдог технологиуд:</p>
+
+                        <input type="checkbox"
+                               id="html"
+                               name="interests"
+                               value="HTML">
+                        <label for="html">HTML / CSS</label>
+
+                        <br>
+
+                        <input type="checkbox"
+                               id="javascript"
+                               name="interests"
+                               value="JavaScript">
+                        <label for="javascript">JavaScript</label>
+
+                        <br>
+
+                        <input type="checkbox"
+                               id="design"
+                               name="interests"
+                               value="Design">
+                        <label for="design">Дизайн</label>
+
+                        <br><br>
+
+                        <label for="about">
+                            Өөрийн тухай:
+                        </label>
+
+                        <textarea id="about"
+                                  name="about"
+                                  rows="5"
+                                  minlength="10"
+                                  placeholder="Өөрийн тухай товч бичнэ үү"
+                                  required></textarea>
+
+                        <input type="checkbox"
+                               id="agree"
+                               name="agree"
+                               required>
+
+                        <label for="agree">
+                            Миний оруулсан мэдээлэл үнэн зөв.
+                        </label>
+                    </fieldset>
+
+                    <button type="submit">
+                        Анкет илгээх
+                    </button>
+
+                    <button type="reset">
+                        Дахин эхлүүлэх
+                    </button>
+
+                </form>
+            </section>
+
+            <!-- СОНИРХЛЫН ЖАГСААЛТ -->
+            <section id="sonirhol">
+                <h2>Миний сонирхол</h2>
+
+                <ul>
+                    <li>Вэб сайт хөгжүүлэх</li>
+                    <li>Компьютерийн технологи судлах</li>
+                    <li>Шинэ зүйл сурч мэдэх</li>
+                </ul>
+            </section>
+
+            <!-- ХИЧЭЭЛИЙН ДҮН -->
+            <section id="dun">
+                <h2>Миний дүн</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Хичээлийн нэр</th>
+                            <th>Дүн</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Хэл ярианы соёл</td>
+                            <td>90</td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>Математик</td>
+                            <td>85</td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>Физик</td>
+                            <td>90</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- ТУСЛАМЖ -->
+            <section id="tuslamj">
+                <h2>Тусламж</h2>
+
+                <p>
+                    Шаардлагатай талбаруудыг бөглөж,
+                    анкет илгээх товчийг дарна уу.
+                </p>
+            </section>
+
+        </article>
+    </main>
+
+    <footer>
+        <p>
+            &copy; 2026 Веб зохиомж хичээл.
+            Бүх эрх хуулиар хамгаалагдсан.
+        </p>
+    </footer>
+
+</body>
+</html>
